@@ -96,7 +96,7 @@ func revoke(pi l.Input) l.Output {
 
 func main() {
 	pluginDescriptor := l.PluginDescriptor{
-		Version:     "0.1.0",
+		Version:     "1.0.0",
 		Author:      "Bas Wegh @ KIT",
 		Name:        "wattsInfoPlugin",
 		Description: "watts info plugin",
