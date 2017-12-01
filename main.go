@@ -1,7 +1,7 @@
 package main
 
 import (
-	l "git.scc.kit.edu/lukasburgey/wattsPluginLib"
+	l "github.com/watts-kit/wattsPluginLib"
 	"github.com/kalaspuffar/base64url"
 	"encoding/json"
 	"bytes"
