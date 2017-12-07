@@ -96,10 +96,11 @@ func revoke(pi l.Input) l.Output {
 
 func main() {
 	pluginDescriptor := l.PluginDescriptor{
-		Version:     "1.0.0",
+		Version:     "1.1.0",
 		Author:      "Bas Wegh @ KIT",
 		Name:        "wattsInfoPlugin",
 		Description: "watts info plugin",
+		DeveloperEmail: "watts-development@lists.kit.edu",
 		Actions: map[string]l.Action{
 			"request": request,
 			"revoke":  revoke},
