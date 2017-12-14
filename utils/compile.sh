@@ -12,14 +12,20 @@ fi
 VERSION=`go version`
 
 cd "${PATH_TO_FOLDER}/.."
-mkdir -p _build/src
+rm -rf _build/
+mkdir -p _build/src/github.com/watts-kit/
 mkdir -p _build/bin
 
 GOPATH=`cd _build && pwd -P`
 echo " "
 echo "running the build with '$VERSION', please include in issue reports"
-echo " "
+echo " using GOPATH=${GOPATH} "
 export "GOPATH=${GOPATH}"
-go get -v
-go build -o watts_plugin_info ${GOPATH}/../main.go
+cd _build/src/github.com/watts-kit/
+git clone https://github.com/watts-kit/watts_plugin_info.git
+cd watts_plugin_info
+go get -v -u
+go build -o watts_plugin_info main.go
+cd "${PATH_TO_FOLDER}/.."
+cp _build/bin/watts_plugin_info .
 echo "done"
