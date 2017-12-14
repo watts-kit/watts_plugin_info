@@ -13,6 +13,7 @@ fi
 VERSION=`go version`
 
 cd "${PATH_TO_FOLDER}/.."
+rm -f watts_plugin_info
 rm -rf _build/
 mkdir -p $SOURCE_FOLDER
 mkdir -p _build/bin
@@ -20,7 +21,7 @@ mkdir -p _build/bin
 GOPATH=`cd _build && pwd -P`
 echo " "
 echo "running the build with '$VERSION', please include in issue reports"
-echo " using GOPATH=${GOPATH} "
+echo " "
 export "GOPATH=${GOPATH}"
 cd $SOURCE_FOLDER
 git clone https://github.com/watts-kit/watts_plugin_info.git
@@ -31,4 +32,5 @@ cd "$SOURCE_FOLDER/watts_plugin_info"
 go get -v -u
 go build -o watts_plugin_info main.go
 cd "${PATH_TO_FOLDER}/.."
+cp _build/bin/watts_plugin_info .
 echo "done"
