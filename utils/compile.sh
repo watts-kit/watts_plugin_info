@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export GO111MODULE=off
 GO=`which go`
 PATH_TO_SCRIPT=`readlink -f ${0}`
 PATH_TO_FOLDER=`dirname "$PATH_TO_SCRIPT"`
